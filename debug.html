@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug - Resource Loading Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Resource Loading Test</h1>
+    <div id="status">Loading...</div>
+
+    <script>
+        $(document).ready(function() {
+            var status = [];
+
+            // Test jQuery
+            status.push("✓ jQuery loaded: " + $().jquery);
+
+            // Test if profiles.json loaded
+            if (typeof window.others !== 'undefined') {
+                status.push("✓ profiles.json loaded");
+                status.push("  - Found " + window.others.posts.length + " profiles");
+            } else {
+                status.push("✗ profiles.json NOT loaded");
+            }
+
+            // Test if main.js functions exist
+            if (typeof window.settings !== 'undefined') {
+                status.push("✓ main.js loaded (settings found)");
+            } else {
+                status.push("✗ main.js NOT loaded");
+            }
+
+            // Display results
+            $('#status').html('<pre>' + status.join('\n') + '</pre>');
+
+            // Log to console
+            console.log('=== Debug Info ===');
+            console.log(status.join('\n'));
+            console.log('window.others:', window.others);
+            console.log('window.settings:', window.settings);
+        });
+    </script>
+
+    <h2>Load these files:</h2>
+    <script src="profiles.json"></script>
+    <script src="main.js"></script>
+
+    <p><a href="index.html">Go to Main Page</a></p>
+</body>
+</html>
