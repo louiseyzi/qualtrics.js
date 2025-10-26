@@ -9,6 +9,19 @@
     <div id="status">Loading...</div>
 
     <script>
+        // Capture any errors
+        window.errors = [];
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            window.errors.push({
+                message: msg,
+                url: url,
+                line: lineNo,
+                column: columnNo,
+                error: error
+            });
+            return false;
+        };
+
         $(document).ready(function() {
             var status = [];
 
@@ -30,6 +43,19 @@
                 status.push("✗ main.js NOT loaded");
             }
 
+            // Check for errors
+            if (window.errors.length > 0) {
+                status.push("\n❌ ERRORS DETECTED:");
+                window.errors.forEach(function(err) {
+                    status.push("  File: " + err.url);
+                    status.push("  Line: " + err.line);
+                    status.push("  Message: " + err.message);
+                    status.push("");
+                });
+            } else {
+                status.push("\n✓ No JavaScript errors detected");
+            }
+
             // Display results
             $('#status').html('<pre>' + status.join('\n') + '</pre>');
 
@@ -38,6 +64,7 @@
             console.log(status.join('\n'));
             console.log('window.others:', window.others);
             console.log('window.settings:', window.settings);
+            console.log('Errors:', window.errors);
         });
     </script>
 
