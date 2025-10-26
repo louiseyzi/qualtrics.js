@@ -1,0 +1,34 @@
+<!--
+  QUALTRICS QUESTION HTML CODE
+
+  Instructions:
+  1. In Qualtrics, create a Text/Graphic question
+  2. Click the </> (HTML View) button
+  3. Delete all existing text
+  4. Copy and paste this entire code
+  5. Replace YOUR-USERNAME with your GitHub username
+-->
+
+<div id="social-media-task">
+  <iframe
+    id="experiment-iframe"
+    src="https://YOUR-USERNAME.github.io/socialmedia/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}"
+    width="100%"
+    height="850px"
+    frameborder="0"
+    style="border: none; overflow: hidden;">
+  </iframe>
+</div>
+
+<style>
+  /* Hide Qualtrics question container styling */
+  #social-media-task {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Optional: Add loading indicator */
+  #experiment-iframe {
+    background: #f0f0f0;
+  }
+</style>

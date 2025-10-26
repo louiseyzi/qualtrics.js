@@ -318,8 +318,24 @@ $(function() {
     
     $('#final-continue').on('click', function() {
 
-      // Redirect link
-      location.href = window.redirect+'&p='+window.participant+'&c='+window.condition+'&u='+encodeURI(window.username)+'&av='+window.avatarexport+'&d='+encodeURI(window.description);
+      // Check if running in Qualtrics
+      if (typeof Qualtrics !== 'undefined' && Qualtrics.SurveyEngine) {
+        // Pass data to Qualtrics as embedded data
+        Qualtrics.SurveyEngine.setEmbeddedData('participant', window.participant);
+        Qualtrics.SurveyEngine.setEmbeddedData('condition', window.condition);
+        Qualtrics.SurveyEngine.setEmbeddedData('username', window.username);
+        Qualtrics.SurveyEngine.setEmbeddedData('avatar', window.avatarexport);
+        Qualtrics.SurveyEngine.setEmbeddedData('description', window.description);
+
+        // Auto-advance to next Qualtrics question
+        var nextButton = parent.document.querySelector('.NextButton');
+        if (nextButton) {
+          nextButton.click();
+        }
+      } else {
+        // Fallback: Standard redirect (for standalone use)
+        location.href = window.redirect+'&p='+window.participant+'&c='+window.condition+'&u='+encodeURI(window.username)+'&av='+window.avatarexport+'&d='+encodeURI(window.description);
+      }
 
     });
     
