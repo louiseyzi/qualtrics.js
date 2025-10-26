@@ -1,38 +1,29 @@
-# Quick Start Guide - Deploy to Qualtrics in 10 Minutes
+# Quick Start Guide - Set Up Qualtrics in 5 Minutes
 
-Follow these steps to get your experiment running in Qualtrics quickly.
+Your experiment is already deployed! Follow these steps to embed it in Qualtrics.
 
 ---
 
-## ✅ Checklist
+## ✅ Your Experiment is Live!
 
-### Step 1: Push to GitHub (5 minutes)
+**Live URL:** https://louiseyzi.github.io/qualtrics.js/
+
+**GitHub Repo:** https://github.com/louiseyzi/qualtrics.js
+
+### To Update Your Files:
 
 ```bash
-# If you haven't already initialized git
 cd /Users/yunzilu/socialmedia
 git add .
-git commit -m "Qualtrics-ready version"
-
-# Create a new repo on GitHub.com (make it PUBLIC!)
-# Then run:
-git remote add origin https://github.com/YOUR-USERNAME/socialmedia.git
-git push -u origin main
+git commit -m "Your update message"
+git push origin master
 ```
 
-### Step 2: Enable GitHub Pages (2 minutes)
-
-1. Go to your repo: `https://github.com/YOUR-USERNAME/socialmedia`
-2. Click **Settings** → **Pages**
-3. Source: Select `main` branch, `/ (root)` folder
-4. Click **Save**
-5. **Wait 3 minutes** for it to deploy
-
-Your URL will be: `https://YOUR-USERNAME.github.io/socialmedia/`
+Wait 1-2 minutes for GitHub Pages to update.
 
 ---
 
-### Step 3: Set Up Qualtrics (3 minutes)
+### Set Up Qualtrics (5 minutes)
 
 #### A. Survey Flow
 1. Go to **Survey Flow**
@@ -47,15 +38,28 @@ Your URL will be: `https://YOUR-USERNAME.github.io/socialmedia/`
 #### B. Create Question
 1. Add **Text/Graphic** question
 2. Click **</>** (HTML view)
-3. Paste code from `QUALTRICS_QUESTION_HTML.html`
-4. **Replace YOUR-USERNAME** with your GitHub username
-5. Click on question → **⚙️** → **JavaScript**
-6. Paste code from `QUALTRICS_QUESTION_JAVASCRIPT.js`
-7. **Save**
+3. Paste this code:
+
+```html
+<div id="social-media-task">
+  <iframe
+    id="experiment-iframe"
+    src="https://louiseyzi.github.io/qualtrics.js/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}"
+    width="100%"
+    height="850px"
+    frameborder="0"
+    style="border: none; overflow: hidden;">
+  </iframe>
+</div>
+```
+
+4. Click on question → **⚙️** → **JavaScript**
+5. Paste code from `QUALTRICS_QUESTION_JAVASCRIPT.js`
+6. **Save**
 
 ---
 
-### Step 4: Test (2 minutes)
+### Test Your Survey (2 minutes)
 
 1. Click **Preview Survey**
 2. Complete the task

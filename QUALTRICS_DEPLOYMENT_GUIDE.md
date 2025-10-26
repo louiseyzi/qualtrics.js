@@ -22,42 +22,28 @@ Your files are already set up! The main.js has been modified to work with Qualtr
 
 ### Step 2: Push to GitHub (if not already done)
 
-**If you haven't created a GitHub repository yet:**
+**Your repository is already set up at:**
+- GitHub Repo: https://github.com/louiseyzi/qualtrics.js
+- Branch: `master`
 
-1. Go to https://github.com and log in
-2. Click the "+" icon (top right) → "New repository"
-3. Name it: `socialmedia` (or any name you prefer)
-4. Keep it **Public** (required for GitHub Pages)
-5. Click "Create repository"
-
-**In your terminal, run these commands:**
+**To update your files:**
 
 ```bash
 cd /Users/yunzilu/socialmedia
-git remote add origin https://github.com/YOUR-USERNAME/socialmedia.git
-git branch -M main
-git push -u origin main
+git add .
+git commit -m "Your commit message"
+git push origin master
 ```
 
-*(Replace YOUR-USERNAME with your GitHub username)*
+### Step 3: GitHub Pages is Already Enabled
 
-### Step 3: Enable GitHub Pages
+Your GitHub Pages is already configured and deployed!
 
-1. Go to your repository on GitHub
-2. Click **Settings** (top menu)
-3. Click **Pages** (left sidebar)
-4. Under "Source", select:
-   - Branch: `main` or `master`
-   - Folder: `/ (root)`
-5. Click **Save**
+### Step 4: Your Live URL
 
-**Wait 2-5 minutes** for deployment to complete.
-
-### Step 4: Get Your Live URL
-
-Your experiment will be available at:
+Your experiment is available at:
 ```
-https://YOUR-USERNAME.github.io/socialmedia/
+https://louiseyzi.github.io/qualtrics.js/
 ```
 
 **Test it!** Open this URL in your browser to make sure everything works.
@@ -112,7 +98,7 @@ Block: Default Question Block
 <div id="social-media-task">
   <iframe
     id="experiment-iframe"
-    src="https://YOUR-USERNAME.github.io/socialmedia/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}"
+    src="https://louiseyzi.github.io/qualtrics.js/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}"
     width="100%"
     height="850px"
     frameborder="0"
@@ -128,8 +114,6 @@ Block: Default Question Block
   }
 </style>
 ```
-
-**Important:** Replace `YOUR-USERNAME` with your actual GitHub username!
 
 ### Step 8: Add JavaScript to the Question
 
