@@ -79,16 +79,14 @@ When participants complete the task, this data is automatically saved:
 
 ## URLs to Remember
 
-Replace `YOUR-USERNAME` with your GitHub username:
-
 **Live Experiment:**
 ```
-https://YOUR-USERNAME.github.io/socialmedia/
+https://louiseyzi.github.io/qualtrics.js/
 ```
 
 **Qualtrics Embed URL (with parameters):**
 ```
-https://YOUR-USERNAME.github.io/socialmedia/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}
+https://louiseyzi.github.io/qualtrics.js/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}
 ```
 
 ---

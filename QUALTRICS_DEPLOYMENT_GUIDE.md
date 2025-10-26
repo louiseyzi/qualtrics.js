@@ -322,9 +322,9 @@ http://smpo.github.io/socialmedia/
 ## Quick Reference Card
 
 ### Your URLs
-- **GitHub Repo:** `https://github.com/YOUR-USERNAME/socialmedia`
-- **Live Experiment:** `https://YOUR-USERNAME.github.io/socialmedia/`
-- **Qualtrics Embed URL:** `https://YOUR-USERNAME.github.io/socialmedia/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}`
+- **GitHub Repo:** `https://github.com/louiseyzi/qualtrics.js`
+- **Live Experiment:** `https://louiseyzi.github.io/qualtrics.js/`
+- **Qualtrics Embed URL:** `https://louiseyzi.github.io/qualtrics.js/index.html?c=${e://Field/condition}&p=${e://Field/ResponseID}`
 
 ### Embedded Data Fields
 - `participant`
